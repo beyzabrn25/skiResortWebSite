@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="logStore.master.cs" Inherits="ejder3200.logStore" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="design.css" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    
+        <script>
+    // Tüm kartları seç
+    var cards = document.querySelectorAll('.card');
+
+    // Her bir kart için etkinleştirme olayı ekleyin
+    cards.forEach(function (card) {
+        card.addEventListener('mouseenter', function () {
+            var cardBack = card.querySelector('.card-back');
+            if (cardBack) {
+                cardBack.style.display = 'block';
+            }
+        });
+
+        card.addEventListener('mouseleave', function () {
+            var cardBack = card.querySelector('.card-back');
+            if (cardBack) {
+                cardBack.style.display = 'none';
+            }
+        });
+    });
+</script>
+    
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <div class="snow" style="width:100% ;height: 60px; margin-top:10px; background-color:steelblue">
+   <nav class="navbar navbar-expand-lg navbar-dark  "style=" font-weight: bold ; font-size: large; ">
+  <a class="navbar-brand" href="ana.aspx">
+            <img  src="img/logo_beyazk.png" alt="" class="logo" />
+        </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse "  style="margin-left:200px" id="navbarNavDropdown">
+    <ul class="navbar-nav"style="color: #07556f">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="logAnaStore.aspx">Anasayfa <span class="sr-only"></span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link text-gray" href="#">Kayak ve Snowboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-gray"  href="#">Outdoor</a>
+      </li>
+      <li class="nav-item" style=" ">
+        <a class="nav-link text-gray"  href="#">Hediyelik Eşya</a>
+      </li>
+      <li class="nav-item" style=" ">
+        <a class="nav-link text-gray" style="" href="#">Sepet</a>
+      </li>
+        
+        <li class="nav-item" style=" ">
+        <a class="nav-link text-gray" style="" href="#">İade ve İptal</a>
+      </li>
+        <li class="nav-item" style=" ">
+        <a class="nav-link text-white" style="" href="kayit.aspx">Kayıt Ol</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+ 
+</div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+        <footer  style="width:100% ;height: 210px; margin-top:10px; background-color:steelblue ;display: flex;
+    justify-content: space-around; padding: 8px; border-radius: 40px;">
+            <div>
+                
+                <h6  style="color: white; font-size: large; margin-left: 10px; margin-top: 5px;">PALANDÖKEN KAYAK MERKEZİ</h6>
+                <img  src="img/ebb.png" alt="" style="width:90px ; height:150px; margin-left:10px"/>
+                <img src="img/logo_beyazk.png" alt="" style="width:120px ; height:80px; margin-left:20px">
+            </div>
+            
+            <div style="text-align:center;padding-top:5px;color:white">
+                <!-- İletişim bilgisi -->
+                <p style=" font-weight: bold;"> İletişim Bilgilerimiz</p>
+                <p>Yunus Emre Mahallesi Küme Evler Palandöken Kayak Merkezi</p>
+                <p>+90 442 317 08 04</p>
+                <p>info@ejder3200.com</p>
+            </div>
+            
+        </footer>
+        
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
